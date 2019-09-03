@@ -6,17 +6,22 @@
   <script src="script.js" type="text/javascript" defer></script>
 </head>
 <body>
-	<table class="routes">
-		<thead>
-			<tr>
-				<th class="number">Маршрут</th>
-				<th class="type">Тип</th>
-				<th class="start">Начало</th>
-				<th class="end">Конец</th>
-			</tr>
-		</thead>
-		<tbody>
-		</tbody>
-	</table>
+	<div class="container">
+		<label for="userTime">Текущее время</label>
+		<input type="time" id="userTime"/> 
+		<button id="show">Показать</button>
+		
+		<table class="routes">
+			<thead>
+				<tr>
+					<th class="number" colspan="2">Маршрут</th>
+					<th class="start">Конечный пункт</th>
+					<th class="end" colspan="2">Прибытие</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>

@@ -1,6 +1,13 @@
+.container{
+	text-align: center;
+	width:50%;
+	margin:0 auto;
+}
+
 .routes {
 	border-collapse: collapse;
 	min-width:30em;
+	width: 100%;
 }
 
 .routes td{
