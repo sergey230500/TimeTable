@@ -1,154 +1,84 @@
-const data = [
-  {
-    "number": "24",
-    "type": "А",
-    "path": "Зелёный Луг-6",
-    "times": [
-      382, 398, 414, 431, 443, 454, 465, 477, 488, 500, 511, 521, 532, 543, 555, 566, 577, 589, 601, 613, 625, 638, 651, 665, 679, 693, 707, 721, 735, 749, 763, 777, 791, 805, 819, 833, 847, 861, 875, 889, 903, 916, 931, 945, 959, 974, 989, 1003, 1017, 1031, 1044, 1057, 1070, 1083, 1095, 1107, 1119, 1132, 1145, 1157, 1170, 1182, 1194, 1208, 1223, 1238, 1254, 1269, 1285, 1300, 1323, 1345, 1366, 1386, 1407, 1430, 11, 34
-    ]
-  },
-  {
-    "number": "38",
-    "type": "А",
-    "path": "ДС Дружная",
-    "times": [
-      341, 360, 379, 398, 416, 435, 454, 474, 494, 514, 534, 561, 591, 614, 638, 663, 688, 705, 724, 743, 763, 781, 800, 819, 838, 857, 876, 896, 918, 937, 956, 975, 995, 1014, 1033, 1052, 1073, 1092, 1112, 1136, 1165, 1191, 1214, 1240, 1261, 1286, 1309, 1333, 1357, 1381, 1405, 1429, 15
-    ]
-  },
-  {
-    "number": "57",
-    "type": "А",
-    "path": "Семашко",
-    "times": [
-      328, 343, 353, 363, 373, 383, 393, 403, 413, 423, 435, 445, 455, 465, 475, 485, 495, 505, 515, 525, 537, 549, 561, 575, 589, 603, 617, 631, 645, 659, 674, 689, 704, 719, 734, 749, 764, 779, 793, 807, 821, 835, 848, 860, 872, 884, 897, 909, 921, 933, 945, 957, 969, 981, 993, 1005, 1017, 1029, 1041, 1055, 1069, 1083, 1097, 1112, 1127, 1144, 1161, 1181, 1201, 1220, 1240, 1260, 1281, 1299, 1317, 1336, 1355, 1374, 1393, 1412, 1431, 10
-    ]
-  },
-  {
-    "number": "12",
-    "type": "Т",
-    "path": "ДС Лермонтова",
-    "times": [
-      396, 416, 439, 457, 473, 488, 503, 518, 534, 549, 563, 579, 600, 624, 650, 675, 700, 724, 748, 772, 796, 819, 842, 867, 890, 914, 941, 965, 986, 1001, 1015, 1029, 1045, 1060, 1075, 1090, 1105, 1121, 1138, 1154, 1172, 1193, 1215, 1239, 1263
-    ]
-  },
-  {
-    "number": "29",
-    "type": "Т",
-    "path": "ДС Калиновского",
-    "times": [
-      366, 378, 390, 402, 409, 414, 420, 427, 434, 440, 446, 452, 458, 464, 470, 476, 483, 490, 497, 504, 510, 516, 523, 530, 537, 543, 548, 554, 560, 567, 575, 584, 594, 605, 616, 627, 637, 646, 655, 664, 674, 684, 693, 702, 711, 720, 729, 738, 747, 756, 764, 772, 780, 788, 796, 804, 812, 821, 830, 839, 847, 855, 863, 872, 880, 889, 898, 907, 916, 925, 935, 943, 951, 959, 968, 975, 982, 989, 996, 1003, 1010, 1017, 1023, 1029, 1035, 1042, 1048, 1054, 1061, 1067, 1074, 1081, 1088, 1094, 1101, 1108, 1114, 1120, 1127, 1133, 1140, 1145, 1151, 1156, 1165, 1173, 1182, 1194, 1206, 1218, 1230, 1242, 1253, 1266, 1279, 1292, 1305, 1318, 1330, 1345, 1360, 1377, 1393, 1410, 1427
-    ]
-  },
-  {
-    "number": "37",
-    "type": "Т",
-    "path": "ДС Уручье-4",
-    "times": [
-      358, 378, 393, 408, 423, 438, 452, 468, 482, 497, 510, 524, 537, 550, 564, 578, 594, 612, 632, 652, 672, 692, 713, 733, 753, 773, 793, 812, 830, 847, 864, 880, 897, 917, 937, 956, 974, 989, 1005, 1020, 1034, 1049, 1062, 1076, 1089, 1103, 1118, 1134, 1149, 1169, 1187, 1205, 1224, 1243, 1259, 1277, 1295, 1313, 1331, 1350, 1371, 1391, 1413, 1435
-    ]
-  },
-  {
-    "number": "40",
-    "type": "Т",
-    "path": "ДС Карастояновой",
-    "times": [
-      366, 383, 401, 410, 418, 426, 435, 443, 450, 457, 464, 471, 478, 485, 492, 499, 507, 516, 526, 535, 544, 553, 563, 577, 592, 607, 622, 637, 653, 670, 686, 700, 714, 728, 741, 754, 768, 781, 793, 806, 819, 832, 846, 859, 872, 886, 899, 913, 926, 940, 952, 965, 974, 983, 992, 999, 1007, 1016, 1023, 1031, 1039, 1047, 1055, 1063, 1071, 1079, 1087, 1095, 1103, 1112, 1121, 1131, 1146, 1159, 1174, 1189, 1203, 1216, 1229, 1243, 1257, 1271, 1286, 1301, 1316, 1331, 1347, 1363, 1378, 1392, 1406, 1421, 1436, 14
-    ]
-  },
-  {
-    "number": "46",
-    "type": "Т",
-    "path": "ДС Зелёный Луг",
-    "times": [366, 386, 402, 410, 416, 422, 428, 433, 440, 446, 451, 457, 462, 467, 472, 477, 482, 487, 492, 497, 502, 507, 512, 517, 523, 528, 533, 539, 544, 549, 554, 561, 566, 572, 578, 592, 592, 606, 626, 646, 666, 686, 707, 728, 746, 766, 787, 806, 824, 844, 865, 885, 903, 925, 947, 964, 975, 986, 992, 997, 1002, 1006, 1011, 1015, 1019, 1024, 1029, 1034, 1039, 1044, 1049, 1054, 1059, 1064, 1069, 1074, 1079, 1084, 1088, 1093, 1097, 1102, 1107, 1112, 1117, 1122, 1127, 1134, 1139, 1145, 1156, 1160, 1166, 1167, 1171, 1184, 1201, 1214, 1231, 1246, 1259, 1273, 1292, 1310, 1349]
-  },
-  {
-    "number": "53",
-    "type": "Т",
-    "path": "ДС Зелёный Луг",
-    "times": [
-      358, 366, 374, 382, 390, 398, 406, 414, 422, 430, 438, 446, 453, 461, 467, 473, 479, 485, 491, 497, 502, 508, 514, 519, 524, 529, 534, 539, 544, 548, 553, 559, 564, 570, 576, 587, 599, 612, 625, 637, 650, 662, 674, 686, 696, 707, 717, 727, 738, 749, 759, 771, 781, 791, 801, 811, 821, 832, 843, 853, 863, 874, 884, 896, 906, 918, 929, 940, 951, 958, 965, 971, 977, 983, 989, 995, 1001, 1006, 1011, 1016, 1021, 1026, 1031, 1036, 1041, 1046, 1051, 1056, 1063, 1069, 1075, 1082, 1089, 1096, 1104, 1114, 1125, 1136, 1146, 1157, 1168, 1177, 1186, 1195, 1204, 1213, 1223, 1232, 1244, 1256, 1268, 1280, 1292, 1305, 1318, 1331, 1343, 1357, 1370, 1383, 1395, 1407, 1419, 1431, 3, 15, 27
-    ]
-  },
-  {
-    "number": "91",
-    "type": "А",
-    "path": "ДС Калиновского",
-    "times": [
-      379, 400, 417, 433, 452, 469, 488, 508, 528, 548, 568, 588, 607, 626, 647, 673, 699, 725, 747, 769, 795, 821, 847, 872, 897, 919, 938, 956, 976, 998, 1016, 1034, 1052, 1071, 1089, 1108, 1127, 1150, 1172, 1194, 1218, 1240, 1263, 1283, 1306, 1329, 1351, 1374, 1396, 1422, 6
-    ]
+$(document).ready(function(){
+  let routeData;
+    $.ajax({
+    url: '/timeTable.json',
+    method: 'GET',
+    dataType: 'json'
+    }).done(function(data){
+      routeData = data;
+      init();
+    });
+ 
+  const MINUTES_IN_DAY = 60*24;
+  /*0) Предобработка данных
+    1) Найти для конкретного времени подходящие рейсы (для каждого маршрута 0-2 рейса)
+    2) Отсортировать по времени ожидания ближайшего
+    3a) очистить таблицу
+    3б) Сформировать новую таблицу html
+  */
+  const fields = ["number","type","path","closest","next"];
+  function init (){
+    let timeInput = document.querySelector("#userTime");
+    let currentTime = Date.now() - (new Date().getTimezoneOffset()*60000);
+    currentTime = currentTime % (1000*60*60*24);
+    currentTime = currentTime - currentTime%60000;
+    timeInput.valueAsNumber = currentTime;
+    let button = document.querySelector("#show");
+    button.addEventListener("click", () => {
+      displayRuns(timeInput.valueAsNumber);
+    });
+    for (let route of routeData){
+      let first = route.times[0];
+      for (let i = route.times.length-1;  route.times[i] < first; i--){
+        route.times[i] += MINUTES_IN_DAY;
+      }
+      route.deadTime = (first - route.times[route.times.length-1] + MINUTES_IN_DAY) >> 1;
+    }
+    displayRuns(currentTime);
   }
-];
-const MINUTES_IN_DAY = 60*24;
-/*0) Предобработка данных
-  1) Найти для конкретного времени подходящие рейсы (для каждого маршрута 0-2 рейса)
-  2) Отсортировать по времени ожидания ближайшего
-  3a) очистить таблицу
-  3б) Сформировать новую таблицу html
-*/
-const fields = ["number","type","path","closest","next"];
-function init (){
-	let timeInput = document.querySelector("#userTime");
-	let currentTime = Date.now() - (new Date().getTimezoneOffset()*60000);
-	currentTime = currentTime % (1000*60*60*24);
-	currentTime = currentTime - currentTime%60000;
-	timeInput.valueAsNumber = currentTime;
-	let button = document.querySelector("#show");
-	button.addEventListener("click", () => {
-		displayRuns(timeInput.valueAsNumber);
-	})
-	for (let route of data){
-		let first = route.times[0];
-		for (let i = route.times.length-1;  route.times[i] < first; i--){
-			route.times[i] += MINUTES_IN_DAY;
-		}
-		route.deadTime = (first - route.times[route.times.length-1] + MINUTES_IN_DAY) >> 1;
-		console.log(route.number, route.deadTime);
-	}
-	displayRuns(currentTime);
-}
 
-function  findRuns(t){//В минутах
-	let runs = [];
-	for (let route of data){
-		if (t < route.deadTime) t += MINUTES_IN_DAY;
-		let index = route.times.findIndex(x => x >= t);
-		if (index >= 0) {
-			let run = {
-				number: route.number,
-				type: route.type,
-				path: route.path,
-				closest: route.times[index]-t,
-			};
-			if (index + 1 < route.times.length) run.next = route.times[index+1]-t;
-			runs.push(run);
-		}
-	}
-	runs.sort(function(a, b) {
-		return a.closest - b.closest;
-	});
-	runs.forEach(run => {
-		if (run.closest === 0) run.closest = "<1";
-	});
-	return runs;
-}
+  function  findRuns(t){//В минутах
+    let runs = [];
+    for (let route of routeData){
+      if (t < route.deadTime) t += MINUTES_IN_DAY;
+      let index = route.times.findIndex(x => x >= t);
+      if (index >= 0) {
+        let run = {
+          number: route.number,
+          type: route.type,
+          path: route.path,
+          closest: route.times[index]-t,
+        };
+        if (index + 1 < route.times.length) run.next = route.times[index+1]-t;
+        runs.push(run);
+      }
+    }
+    runs.sort(function(a, b) {
+      return a.closest - b.closest;
+    });
+    runs.forEach(run => {
+      if (run.closest === 0) run.closest = "<1";
+    });
+    return runs;
+  }
 
-function displayRuns(currentTime){//в милисекундах
-	
-	let t = currentTime % (1000*60*60*24);
-	t = Math.ceil(t/60000);
-	let runs = findRuns(t);
-	console.log(runs);
-	let container = document.querySelector(".routes tbody");
-	container.innerHTML = "";
-	for(let route of runs){
-		let tr = document.createElement("tr");
-		for (let field of fields){
-			let td = document.createElement("td");
-			td.innerText = route[field] || "";
-			td.classList.add(field);
-			tr.appendChild(td);
-		}
-		container.appendChild(tr);
-	}
-}
-init();
+  function displayRuns(currentTime){//в милисекундах
+    
+    let t = currentTime % (1000*60*60*24);
+    t = Math.ceil(t/60000);
+    let runs = findRuns(t);
+    let container = document.querySelector(".routes tbody");
+    container.innerHTML = "";
+    for(let route of runs){
+      let tr = document.createElement("tr");
+      for (let field of fields){
+        let td = document.createElement("td");
+        td.innerText = route[field] || "";
+        td.classList.add(field);
+        tr.appendChild(td);
+      }
+      container.appendChild(tr);
+    }
+  }
+
+});
